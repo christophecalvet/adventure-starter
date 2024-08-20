@@ -46,6 +46,12 @@ class Room {
     getItemByName(name) {
 
         // Fill this in
+        let indexItem = this.items.findIndex(item=>item.name === name)
+        //Find and store item
+       let deletedItem = this.items.splice(indexItem,1);
+        return deletedItem[0];
+
+
     }
 
 }

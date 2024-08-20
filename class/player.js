@@ -34,12 +34,25 @@ class Player {
     takeItem(itemName) {
 
         // Fill this in
+        //Remove item from the room
+        let item = this.currentRoom.getItemByName(itemName);
+
+        //Add item to the user
+        this.items.push(item);
+
+
 
     }
 
     dropItem(itemName) {
 
         // Fill this in
+        //Remove from player inventory
+        let item = this.getItemByName(itemName)
+
+        //Add to room inventory
+        this.currentRoom.items.push(item);
+
     }
 
     eatItem(itemName) {
@@ -50,6 +63,13 @@ class Player {
     getItemByName(name) {
 
         // Fill this in
+                // Fill this in
+                let indexItem = this.items.findIndex(item=>item.name === name)
+                //Find and store item
+               let deletedItem = this.items.splice(indexItem,1);
+                return deletedItem[0];
+
+
     }
 }
 
