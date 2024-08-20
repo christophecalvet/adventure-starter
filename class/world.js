@@ -44,9 +44,11 @@ class World {
             let newItem;
 
             if (itemData.isFood) {
-                console.log("ERROR: Food not supported yet.");
+                //console.log("ERROR: Food not supported yet.");
+                //console.log("NEW ITEM IS FOOD")
+                newItem = new Food(itemData.name, itemData.description);
+
                 // Fill this in
-                return;
             } else {
                 newItem = new Item(itemData.name, itemData.description);
             }

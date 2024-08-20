@@ -1,3 +1,5 @@
+const { Food } = require('./food');
+
 class Player {
 
     constructor(name, startingRoom) {
@@ -57,6 +59,14 @@ class Player {
 
     eatItem(itemName) {
         // Fill this in
+        let indexItem = this.items.findIndex(item=>item.name === itemName)
+        if(this.items[indexItem] instanceof Food){
+            let deletedItem = this.items.splice(indexItem,1);
+            console.log(deletedItem.name + " is eaten.")
+
+        }else{
+            console.log("NOT FOOD!!!!!!!!!!")
+        }
 
     }
 
